@@ -1,0 +1,37 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane fx:controller="com.github.ixiongdi.sdut.Controller"
+          xmlns:fx="http://javafx.com/fxml">
+    <Label text="第一步：选择含有MP4文件的源文件夹" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+    <Button GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#selectSrc">选择</Button>
+
+    <Label text="第二步：选择输出文件夹，通常是U盘，这一步会清空U盘" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <Button GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#selectDst">选择</Button>
+
+    <Label text="已选择文件列表" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TableView GridPane.columnIndex="0" GridPane.rowIndex="5" fx:id="srcFileView">
+        <columns>
+            <TableColumn minWidth="300" fx:id="srcFileName" text="源文件"/>
+            <TableColumn fx:id="srcFileSize" text="大小"/>
+        </columns>
+    </TableView>
+
+    <Label text="目的文件列表" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <TableView GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="dstFileView">
+        <columns>
+            <TableColumn minWidth="300" fx:id="dstFileName" text="目标文件"/>
+            <TableColumn fx:id="dstFileSize" text="大小"/>
+        </columns>
+    </TableView>
+
+    <Label text="第三步：把编好号的文件复制到目的文件夹" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+
+    <Button GridPane.columnIndex="0" GridPane.rowIndex="7" onAction="#copy">复制</Button>
+
+    <Label text="第四步：根据编好号的文件生成歌单" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+
+    <Button GridPane.columnIndex="0" GridPane.rowIndex="9" onAction="#gen">生成</Button>
+
+</GridPane>
